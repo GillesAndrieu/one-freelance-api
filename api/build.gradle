@@ -1,0 +1,15 @@
+dependencies {
+    // Flyway
+    implementation "org.flywaydb:flyway-core:${versions.flyway}"
+    implementation "org.flywaydb:flyway-database-postgresql:${versions.flyway}"
+    // Swagger
+    implementation "io.swagger.core.v3:swagger-core:${versions.swagger}"
+}
+
+tasks.named("bootJar") {
+    duplicatesStrategy = 'exclude'
+}
+
+jar {
+    enabled = false
+}

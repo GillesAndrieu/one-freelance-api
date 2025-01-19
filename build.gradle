@@ -1,0 +1,97 @@
+import org.gradle.api.publish.maven.MavenPublication
+import org.gradle.api.tasks.compile.GroovyCompile
+import org.gradle.api.tasks.compile.JavaCompile
+import org.gradle.jvm.toolchain.JavaLanguageVersion
+
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.4.1'
+	id 'io.spring.dependency-management' version '1.1.7'
+}
+
+ext.versions = [
+		flyway			: '10.20.1',
+		lombok       	: '1.18.36',
+		postgres        : '42.7.4',
+		junit     		: '1.11.4',
+		vavr    		: '0.10.5',
+		swagger		    : '2.2.27'
+]
+
+apply from: 'version.gradle'
+def getProjectVersion = loadVersion().getVersionForProject()
+
+allprojects {
+	apply plugin: 'java'
+	apply plugin: 'org.springframework.boot'
+	apply plugin: 'io.spring.dependency-management'
+
+	repositories {
+		mavenCentral()
+	}
+
+	tasks.named("compileJava") {
+		options.compilerArgs << '-parameters'
+	}
+
+	bootJar {
+		enabled = false
+	}
+
+	jar {
+		enabled = true
+	}
+}
+
+subprojects {
+	apply plugin: 'java'
+	apply plugin: 'org.springframework.boot'
+	apply plugin: 'io.spring.dependency-management'
+
+	group 'com.freelance'
+	version = getProjectVersion
+
+	java {
+		toolchain {
+			languageVersion = JavaLanguageVersion.of(23)
+		}
+		withSourcesJar()
+	}
+
+	configurations {
+		compileOnly {
+			extendsFrom annotationProcessor
+		}
+	}
+
+	dependencies {
+		/**
+		 * Application Dependencies
+		 */
+		// Spring
+		implementation "org.springframework.boot:spring-boot-starter-web"
+		// Vavr
+		implementation "io.vavr:vavr:${versions.vavr}"
+		// Lombok
+		compileOnly "org.projectlombok:lombok:${versions.lombok}"
+		annotationProcessor "org.projectlombok:lombok:${versions.lombok}"
+		// -----------------
+		// Test dependencies
+		// -----------------
+		testImplementation "org.springframework.boot:spring-boot-starter-test"
+		testImplementation "org.springframework.security:spring-security-test"
+		testRuntimeOnly "org.junit.platform:junit-platform-launcher:${versions.junit}"
+	}
+
+	test {
+		useJUnitPlatform()
+	}
+
+	bootJar {
+		enabled = false
+	}
+
+	jar {
+		enabled = true
+	}
+}

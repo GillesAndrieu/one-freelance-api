@@ -1,0 +1,8 @@
+rootProject.name = 'one-freelance-api'
+include 'business'
+include 'model'
+include 'persistence'
+include 'security'
+include 'cache'
+include 'api'
+
