@@ -12,7 +12,7 @@ plugins {
 ext.versions = [
 		flyway			: '11.2.0',
 		lombok       	: '1.18.36',
-		postgres        : '42.7.4',
+		postgres        : '42.7.5',
 		junit     		: '1.11.4',
 		vavr    		: '0.10.5',
 		swagger		    : '2.2.27'
