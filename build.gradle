@@ -15,7 +15,7 @@ ext.versions = [
 		postgres        : '42.7.4',
 		junit     		: '1.11.4',
 		vavr    		: '0.10.5',
-		swagger		    : '2.2.27'
+		swagger		    : '2.2.28'
 ]
 
 apply from: 'version.gradle'
