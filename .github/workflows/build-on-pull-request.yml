@@ -4,10 +4,10 @@ name: Build - PR
 
 # Controls when the action will run.
 on:
-  # Triggers the workflow on master/develop branch based pull request event
+  # Triggers the workflow on main/develop branch based pull request event
   pull_request:
     branches:
-      - 'master'
+      - 'main'
     paths-ignore:
       - '**.md'
       - '**.png'
