@@ -10,6 +10,12 @@ tasks.named("bootJar") {
     duplicatesStrategy = 'exclude'
 }
 
+bootJar {
+    enabled = true
+    archiveFileName = "api-${version}.jar"
+    mainClass = 'com.freelance.api.Api'
+}
+
 jar {
     enabled = false
 }

@@ -19,7 +19,7 @@ ext.versions = [
 ]
 
 apply from: 'version.gradle'
-def getProjectVersion = loadVersion().getVersionForProject()
+def getProjectVersion = loadVersion().getVersion()
 
 allprojects {
 	apply plugin: 'java'
@@ -55,7 +55,6 @@ subprojects {
 		toolchain {
 			languageVersion = JavaLanguageVersion.of(23)
 		}
-		withSourcesJar()
 	}
 
 	configurations {
