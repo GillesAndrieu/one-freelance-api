@@ -32,6 +32,10 @@ out/
 /nbdist/
 /.nb-gradle/
 
+### DB data ###
+tools/.log
+tools/docker/data
+
 ### VS Code ###
 .vscode/
 /ui/node_modules/
