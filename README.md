@@ -3,8 +3,7 @@
 <table>
     <tr>
         <th>Api module</th>
-        <td>[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=GillesAndrieu_one-freelance-api&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=GillesAndrieu_one-freelance-api)
-        </td>
+        <td><a href="https://sonarcloud.io/dashboard?id=GillesAndrieu_one-freelance-api"><img src="https://sonarcloud.io/api/project_badges/measure?project=GillesAndrieu_one-freelance-api&metric=alert_status" alt="api-quality" /></a></td>
     </tr>
 </table>
 
