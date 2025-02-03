@@ -14,7 +14,7 @@ ext.versions = [
 		lombok       	: '1.18.36',
 		postgres        : '42.7.5',
 		junit     		: '1.11.4',
-		vavr    		: '0.10.5',
+		vavr    		: '0.10.6',
 		swagger		    : '2.2.28'
 ]
 
