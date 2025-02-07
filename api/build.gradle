@@ -1,4 +1,11 @@
 dependencies {
+    implementation project(":security")
+    // Spring
+    //implementation "org.springframework.boot:spring-boot-starter-oauth2-client"
+    implementation "org.springframework.security:spring-security-oauth2-jose"
+    implementation "org.springframework.security:spring-security-oauth2-resource-server"
+    implementation "org.springframework.boot:spring-boot-starter-validation"
+    implementation "org.springframework.boot:spring-boot-starter-security"
     // Flyway
     implementation "org.flywaydb:flyway-core:${versions.flyway}"
     implementation "org.flywaydb:flyway-database-postgresql:${versions.flyway}"
