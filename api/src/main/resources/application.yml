@@ -1,0 +1,30 @@
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id:
+            client-secret:
+            scope: openid,profile,email
+      resourceserver:
+        jwt:
+          issuer-uri: https://accounts.google.com
+          jwk-set-uri: https://www.googleapis.com/oauth2/v3/certs
+            #https://accounts.google.com/o/oauth2/token
+          #https://www.googleapis.com/auth/userinfo.email
+  #security:
+    #oauth2:
+      #client:
+        #registration:
+          #google:
+            #client-id: ${GOOGLE_CLIENT_ID}
+            #client-secret: ${GOOGLE_CLIENT_SECRET}
+
+
+logging:
+  level:
+    root: INFO
+    org.springframework.web: DEBUG
+    org.springframework.security: DEBUG
+    org.springframework.security.oauth2: DEBUG
