@@ -1,7 +1,7 @@
 dependencies {
-    // Flyway
-    implementation "org.flywaydb:flyway-core:${versions.flyway}"
-    implementation "org.flywaydb:flyway-database-postgresql:${versions.flyway}"
+    implementation project(":business")
+    implementation project(":model")
+    implementation project(":persistence")
     // Swagger
     implementation "io.swagger.core.v3:swagger-core:${versions.swagger}"
 }

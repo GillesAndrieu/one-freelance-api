@@ -1,8 +1,3 @@
 dependencies {
-    // Spring
-    implementation "org.springframework.boot:spring-boot-starter-data-jdbc"
-    implementation "org.springframework.boot:spring-boot-starter-jdbc"
-    implementation "org.springframework.session:spring-session-jdbc"
-    // Postgres
-    runtimeOnly "org.postgresql:postgresql:${versions.postgres}"
+    implementation project(":model")
 }
